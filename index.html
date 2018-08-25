@@ -1,847 +1,1265 @@
-﻿<!DOCTYPE html>
-<html lang="en">
-
+<!DOCTYPE html>
+<html lang="es">
 <head>
-    <link rel="icon" href="images/icon.ico" type="image/x-icon" />
-	<meta charset="UTF-8">
-	<title>Uttam Sapkota</title>
-	<meta name="description" content="The digital resume and personal website of Bachelor of Engineering Student, Uttam Sapkota.">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<link rel="stylesheet" href="css/all.css">
-	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+    <!-- 
+        Hi there!
 
-	<!-- Oswald -->
-	<link href='http://fonts.googleapis.com/css?family=Oswald:400,300,700' rel='stylesheet' type='text/css'>
+        Wow! I thought nobody would enter here. Welcome!
 
-	<!-- Raleway -->
-	<link href='https://fonts.googleapis.com/css?family=Raleway:400,300,500' rel='stylesheet' type='text/css'>
+        Thanks for watching the page (and the code!). I hope you enjoy and like it.
 
-	<link href='https://fonts.googleapis.com/css?family=Playfair+Display:400,900' rel='stylesheet' type='text/css'>
+        If you have any question or suggestion, feel free to let me know sending me
+        an email to yune.vk@gmail.com
+
+        Have a nice day!
+
+        \ (•◡•) /
+    -->
+    <meta charset="UTF-8">
+    <!--<meta http-equiv="Content-Security-Policy" content="default-src 'self'">-->
+    <meta name="application-name" content="Uttam Sapkota">
+    <meta name="theme-color" content="#2B454E">
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="author" href="humans.txt">
+
+    <!-- Favicons -->
+    <link rel="icon" sizes="192x192" href="favicon.png">
+    <link rel="apple-touch-icon" href="favicon.png">
+    <link rel="mask-icon" href="favicon.svg" color="#2B454E">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+
+
+    <title>Uttam Sapkota - Backend | Machine Learning </title>
+    <meta name="description" content="Backend developer and ML enthusiast. Do you want to know more about me? Enter my website and discover everything I can do for you. :)">
+
+    <!-- Facebook Share -->
+    <meta property="og:url" content="https://uttamsapkota.com.np/" />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Uttam Sapkota - Backend | Machine Learning " />
+    <meta property="og:description" content="Backend developer and ML enthusiast. Do you want to know more about me? Enter my website and discover everything I can do for you. :)" />
+    <meta property="og:image" content="https://yunevk.github.io/img/share/facebook.png" />
+
+    <!-- Twitter Share -->
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:creator" content="@Yune__vk">
+    <meta name="twitter:url" content="https://yunevk.github.io/">
+    <meta name="twitter:title" content="Sonia Ruiz Cayuela - Frontend Web Developer">
+    <meta name="twitter:description" content="Diseñadora y desarrolladora web frontend. ¿Quieres saber más sobre mí? Entra en mi web y descubre todo lo que puedo hacer por ti. :)">
+    <meta name="twitter:image" content="https://yunevk.github.io/img/share/twitter.png">
+
+    <style>
+            #loading {
+                width: 100%;
+                height: 100%;
+                top: 0;
+                left: 0;
+                position: fixed;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                background-color: #02A3D6;
+                z-index: 99;
+            }  
+            #loading.loaded {
+                display: none;
+            }
+            .points span{
+                display: inline-block;
+                width: 20px;
+                height: 20px;
+                border-radius: 100%;
+                background-color: #fafafa;
+                margin: 35px 5px;
+            }
+    
+            .points span:nth-child(1){
+                animation: loading 1s ease-in-out infinite;
+            }
+    
+            .points span:nth-child(2){
+                animation: loading 1s ease-in-out 0.33s infinite;
+            }
+    
+            .points span:nth-child(3){
+                animation: loading 1s ease-in-out 0.66s infinite;
+            }
+    
+            @keyframes loading{
+                0%, 75%, 100%{
+                    -webkit-transform: translateY(0);
+                    -ms-transform: translateY(0);
+                    -o-transform: translateY(0);
+                    transform: translateY(0);
+                }
+    
+                25%{
+                    -webkit-transform: translateY(-20px);
+                    -ms-transform: translateY(-20px);
+                    -o-transform: translateY(-20px);
+                    transform: translateY(-20px);
+                }
+            }
+        </style>
+
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"
+        integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+        crossorigin="anonymous"></script>
 
 </head>
 <body>
+    <!-- Loader -->
+    <div id="loading">
+        <div class="points">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+    </div>
 
-	<section id="scrollNavigationBar">
-			<div id="scrollNavigationButtonWrapper">
-				<a class="navbuttons" id="navbutton1" href="#" data-target="about">
-					<p class="scrollNavHeader">About</p>
-					<div class="navDot"></div>
-					<div class="navDotDelayed"></div>
-				</a>
-				<a class="navbuttons" id="navbutton2" href="#" data-target="education">
-					<p class="scrollNavHeader">Education</p>
-					<div class="navDot"></div>
-					<div class="navDotDelayed"></div>
-				</a>
-				<a class="navbuttons" id="navbutton3" href="#" data-target="experience">
-					<p class="scrollNavHeader">Experience</p>
-					<div class="navDot"></div>
-					<div class="navDotDelayed"></div>
-				</a>
-				<a class="navbuttons" id="navbutton4" href="#" data-target="projects">
-					<p class="scrollNavHeader">Projects</p>
-					<div class="navDot"></div>
-					<div class="navDotDelayed"></div>
-				</a>
-				<a class="navbuttons" id="navbutton5" href="#"  data-target="contact">
-					<p class="scrollNavHeader">Contact</p>
-					<div class="navDot"></div>
-					<div class="navDotDelayed"></div>
-				</a>	
- 			</div>	
-	</section>
+    <!-- Mobile nav -->
+    <nav class="burguer-nav">
+        <a class="nav-button">
+            <div class="button-content"></div>
+        </a>
 
-	<section id="homescreen" class="startscreen">
-		<div id="navigationBar">
-			<div id="navigationButtonWrapper">
-				<a class="navbuttons" href="#" data-target="about">
-					<p class="navHeader">About</p>
-					<div class="expandingUnderline"></div>
-				</a>
-				<i class="fa fa-circle"></i>
-				<a class="navbuttons" href="#" data-target="education">
-					<p class="navHeader">Education</p>
-					<div class="expandingUnderline"></div>
-				</a>
-				<i class="fa fa-circle"></i>
-				<a class="navbuttons" href="#" data-target="experience">
-					<p class="navHeader">Experience</p>
-					<div class="expandingUnderline"></div>
-				</a>
-				<i class="fa fa-circle"></i>
-				<a class="navbuttons" href="#" data-target="projects">
-					<p class="navHeader">Projects</p>
-					<div class="expandingUnderline"></div>
-				</a>
-				<i class="fa fa-circle"></i>
-				<a class="navbuttons" href="#"  data-target="contact">
-					<p class="navHeader">Contact</p>
-					<div class="expandingUnderline"></div>
-				</a>	
- 			</div>
- 			<a id="hamburger" href="#" data-target="expandMenu">
-			<div id="menuLine1" class="menuLine"></div>
-			<div id="menuLine2" class="menuLine"></div>	
-			<div id="menuLine3" class="menuLine"></div>	
-			<div id="menuLine4" class="menuLine"></div>		
-		</a>
-		</div>
+        <div class="options">
+            <div class="links">
+                <a href="javascript:;" class="nav-link" data-item="header">
+                    <span class="number">0</span>
+                    <span class="title">START</span>
+                </a>
+                <a href="javascript:;" class="nav-link" data-item="aboutme">
+                    <span class="number">1</span>
+                    <span class="title">KNOW ME</span>
+                </a>
+                <a href="javascript:;" class="nav-link" data-item="skills">
+                    <span class="number">2</span>
+                    <span class="title">SKILLS</span>
+                </a>
+                <a href="javascript:;" class="nav-link" data-item="timeline">
+                    <span class="number">3</span>
+                    <span class="title">TIMELINE</span>
+                </a>
+                <a href="javascript:;" class="nav-link" data-item="portfolio">
+                    <span class="number">4</span>
+                    <span class="title">PORTFOLIO</span>
+                </a>
+               <!--  <a href="javascript:;" class="nav-link" data-item="yunemy">
+                    <span class="number">5</span>
+                    <span class="title">YUNEMY</span>
+                </a>
+                <a href="javascript:;" class="nav-link" data-item="blog">
+                    <span class="number">6</span>
+                    <span class="title">BLOG</span>
+                </a> -->
+                <a href="javascript:;" class="nav-link" data-item="contact">
+                    <span class="number">5</span>
+                    <span class="title">CONTACT</span>
+                </a>
+            </div>
+        </div>
+    </nav>
 
-		<a href="#" class="navbuttons" id="scrollDown" data-target="aboutDown">
-			<div>
-				<p>Let me introduce myself</p>
-			</div>
-			<i class="fa fa-angle-down"></i>
-		</a>
+    <!-- Desktop nav -->
+    <nav class="main-nav">
+        <a href="javascript:;" class="nav-link" data-item="header">
+            <span class="nav-text">START</span>
+            <span class="nav-dot"></span>
+        </a>
+        <a href="javascript:;" class="nav-link" data-item="aboutme">
+            <span class="nav-text">KNOW ME</span>
+            <span class="nav-dot"></span>
+        </a>
+        <a href="javascript:;" class="nav-link" data-item="skills">
+            <span class="nav-text">SKILLS</span>
+            <span class="nav-dot"></span>
+        </a>
+        <a href="javascript:;" class="nav-link" data-item="timeline">
+            <span class="nav-text">TIMELINE</span>
+            <span class="nav-dot"></span>
+        </a>
+        <a href="javascript:;" class="nav-link" data-item="portfolio">
+            <span class="nav-text">PORTFOLIO</span>
+            <span class="nav-dot"></span>
+        </a>
+      <!--   <a href="javascript:;" class="nav-link" data-item="yunemy">
+            <span class="nav-text">YUNEMY</span>
+            <span class="nav-dot"></span>
+        </a>
+        <a href="javascript:;" class="nav-link" data-item="blog">
+            <span class="nav-text">BLOG</span>
+            <span class="nav-dot"></span>
+        </a> -->
+        <a href="javascript:;" class="nav-link" data-item="contact">
+            <span class="nav-text">CONTACTO</span>
+            <span class="nav-dot"></span>
+        </a>
 
-		<div id="message">
-			<p id="span1">This is me.</p> 
-			<p id="span2">Expanding my toolbox.</p> 
-			<p id="span3">Working on things that interests me.</p> 
-			<p id="span4">Exploring ideas.</p> 
-			<p id="span5">Feeling social.</p> 
-		</div>
+    </nav>
+    <!-- Display the gradient backgrund when the heder section is in the viewport -->
+    <div class="background"></div>
+    <div class="particles" id="particles"></div>
 
-		<h1 id="hi">Hello. My name is Uttam. <br> <span>Bachelor of Computer Engineering student and Intern at Fusemachines Nepal</span></h1>
-		<h1 id="welcome">Welcome.</h1>
+    <!-- Main Content -->
+    <div class="main-content">
+        <!-- Header Section -->
+        <header class="section header light" id="header">
+            <div class="illustration-bg"></div>
+            <h1>
+                <span class="hi">Hello</span>
+                <span class="my-name-is"> I am </span>
+                <span class="name">Uttam Sapkota</span>
+                <span class="and"> and I am a </span>
+                <span class="job">Computer Engineer, Java Developer and Machine Learning Enthusiast</span>
+            </h1>
 
-		<div id="forestHolder"><img src="images/forest.svg" id="forest"></div>
-		<div id="mountainHolder"><img src="images/mountains.svg" id="mountain"></div>
-		<div id="mountainHolder2"><img src="images/mountains2.svg" id="mountain2"></div>
-		<div id="lowerBackground"></div>
+            <div class="scroll">
+                <p class="info-scroll">Scroll to know more about me</p>
+                <img src="img/down-arrow.svg" alt="Fecha apuntando hacia abajo">
+            </div>
+        </header>
 
-		<a target="_blank", class="landing_link", id="landing_github", href="https://github.com/uttsap">
-			<i class="fa fa-github fa-stack-1x fa-inverse"></i>
-		</a>
+        <!-- About Me -->
+        <section class="section about-me" id="aboutme">
+            <div class="illustration-bg" data-speed="20" data-parent-section="header"></div>
+            <div class="title">
+                <p class="number">01</p>
+                <p class="subtitule">KNOW ME</p>
+                <h2>About Me</h2>
+            </div>
 
-		<a target="_blank", class="landing_link", id="landing_linkedin", href="https://www.linkedin.com/in/uttam011">
-			<i class="fa fa-linkedin fa-stack-1x fa-inverse"></i>
-		</a>
-
-	</section>
-	
-	<section id="about" class="about">		
-		<div id="aboutWrapper">
-			<h1 id="aboutMe" >About Me</h1>
-			<div id="aboutText">
-				<p>
-					My name is Uttam Sapkota and I'm currently in my final year studying towards a Bachelor of Engineering degree in Computer Engineering. <br>
-					I've always loved football, travelling with friends and exploring new places. I really enjoy building with ones and zeros
-					Besides engaging myself in side projects, hanging out with friends and studying, I'm a huge football junkie.
-					I have only missed a handful of Real Madrid games in the last couple of years.
-					<br><br>If you want to know more about me, what I'm up to or if you're just feeling social - <b>feel free to get in touch</b>, I would love to hear from you.
-				</p>
-			</div>
-		</div>
-		<a id="resume" href="pdf/CV 2018 August 25.pdf" target="_black">
+            <div class="content">
+                <p>My name is <strong>Uttam Sapkota</strong>, and I am a computer engineer , java developer and machine learning enthusiast.</p>
+                
+                <p>I have a <strong>real passion</strong> for everything related to <strong>technology an machine learning</strong>. I've always loved football, travelling with friends and exploring new places. I really enjoy building with ones and zeros. Besides engaging myself in side projects, hanging out with friends and studying, I'm a huge football junkie. I have only missed a handful of Real Madrid games in the last couple of years. </p> <p>If you want to know more about me, what I'm up to or if you're just feeling social - feel free to get in touch, I would love to hear from you. </p>
+            </div>
+            <a id="resume" href="pdf/cv.pdf" target="_black">
 				<p>Resume</p>
 				<div id="resumeExpandingBackground"></div>
 		</a>
-		<div id="overResume">
-			<div id="bulbLineStartHolder"><div id="bulbLineStart"><div id="roofBoxLine"></div></div></div>
-			<div id="bulbLineStartBottom"></div>
-			<div class="bulbLine"></div>
-			<div class="bulbHolder">
-				<div class="footLine"></div>
-				<div class="bulb"><div class="bulbShine"></div></div>
-			</div>
-			<div id="shelf">
-				<div class="shelfPart">
-					<div class="leftShelfHolder">
-						<div>
-							<div class="upperScrew"></div>
-							<div class="lowerScrew"></div>
-						</div>
-					</div>
-					<div class="overBoardLeft"><div></div></div>
-					<div class="underBoardLeft"></div>
-					<div class="rightShelfHolder">
-						<div>
-							<div class="upperScrew"></div>
-							<div class="lowerScrew"></div>
-						</div>
-					</div>
-					<div class="overBoardRight"><div></div></div>
-					<div class="underBoardRight"></div>
-					<div class="shelfBoard"></div>
-					<div class="book" id="b1"></div>
-					<div class="book" id="b2"></div>
-					<div class="book" id="b3"></div>
-				</div>
-				<div class="shelfPart">
-					<div class="leftShelfHolder">
-						<div>
-							<div class="upperScrew"></div>
-							<div class="lowerScrew"></div>
-						</div>
-					</div>
-					<div class="overBoardLeft"><div></div></div>
-					<div class="underBoardLeft"></div>
-					<div class="rightShelfHolder">
-						<div>
-							<div class="upperScrew"></div>
-							<div class="lowerScrew"></div>
-						</div>
-					</div>
-					<div class="overBoardRight"><div></div></div>
-					<div class="underBoardRight"></div>
-					<div class="shelfBoard"></div>
-					<div class="book" id="b4"></div>
-					<div class="book" id="b5"></div>
-					<div class="book" id="b6"></div>
-					<div class="book" id="b7"></div>
-					<div class="book" id="b8"></div>
-					<div class="book" id="b9"></div>
-					<div id="rotatingBookCover"></div>
-				</div>
+        </section>
 
-			</div>
-		</div>
-		<div id="underResume">
-			<div id="lamp">
-				<div id="tableLamp">
-					<div id="lampShadeBottom"></div>
-					<div id="lampShadeTop"></div>
-					<div id="lampShadeLeft"></div>
-					<div id="lampShadeRight"></div>
-				</div>
-				<div class="bulbHolder">
-					<div class="footLine"></div>
-					<div class="bulb"><div class="bulbShine"></div></div>
-				</div>
-				<div id="lampFoot"></div>
-				<div id="lampFootBallLeft"></div>
-				<div id="lampFootBallRight"></div>
-				<div id="lampBallUnder"></div>
-				<div id="thickLampLeg"><div id="lampLine"></div></div>
-				<div id="lampBallOver"></div>
-				<div class="bulbLine"></div>
-			</div>
-			<div id="backpackAndStool">
-				<div id="backpackHolder">
-					<div id="leftSidePocket"></div>
-					<div id="rightSidePocket"></div>
-					<div id="backpack">
-						<div id="backpackHanger"><div></div></div>
-						<div id="cover">
-							<div id="label"><div></div><div></div></div>
-							<div id="leftBuckle">
-								<div class="nit"></div>
-								<div class="nit"></div>
-								<div class="chromeThing">
-									<div class="roundThing"></div>
-								</div>
-								<div class="lowerBuckle">
-									<div class="pointyThing"></div>
-								</div>
-							</div>
-							<div id="rightBuckle">
-								<div class="nit"></div>
-								<div class="nit"></div>
-								<div class="chromeThing">
-									<div class="roundThing"></div>
-								</div>
-								<div class="lowerBuckle">
-									<div class="pointyThing"></div>
-								</div>
-							</div>
-						</div>
-						<div id="rope"><div></div></div>
-						<!--<div id="rope"><div></div></div>-->
-						<div id="backpackBottom"></div>
-						<div id="shoulderStrap1"></div>
-						<div id="shoulderStrap2"></div>
-					</div>
-				</div>
-				<div id="stool">
-					<div id="stoolTop"><div></div></div>
-					<div class="stoolLeg" id="sLeg1">
-						<div class="stoolLegTop"><div></div></div>
-					</div>
-					<div id="legHolder"></div>
-					<div class="stoolLeg" id="sLeg2">
-						<div class="stoolLegTop"><div></div></div>
-					</div>
-				</div>
-			</div>
-			
-			
-			<div id="painting">
-				<div id="innerFrame"></div>
-				<div id="selfPortrait">
-					<div id="pSquare1"></div>
-					<div id="pCircle1"></div>
-					<div id="pCircle2"></div>
-					<div id="pSquare2"></div>
-				</div>
-			</div>
-			<div id="desk">
-				<div id="leftLegBall" class="deskPart"></div>
-				<div id="rightLegBall" class="deskPart"></div>
-				<div id="leftLeg" class="deskPart"></div>
-				<div id="rightLeg" class="deskPart"></div>
-				<div id="leftLegTop" class="deskPart"><div id="legLine1"></div></div>
-				<div id="rightLegTop" class="deskPart"><div id="legLine2"></div></div>
-				<div id="lowerPart" class="deskPart">
-					<div id="drawer" class="deskPart">
-						<div id="innerDrawer"></div>
-						<div id="keyHole"></div>
-					</div>
-				</div>
-				<div id="upperPart" class="deskPart"></div>
-				<div id="coffeeMugOuter">
-					<div class="coffeeSteam"></div>
-					<div class="coffeeSteam"></div>
-					<div class="coffeeSteam"></div>
-					<div  id="coffeeMug">
-						<div></div>
-						<div></div>
-					</div>
-					<div id="coffeeMugHandle"></div>
-				</div>
-				<div id="computer">
-					<div id="compLower"></div>
-					<div id="compUpper">
-						<div id="screen">
-							<div id="line1" class="computerLine hiddenCompLine"></div>
-							<div id="line2" class="computerLine hiddenCompLine"></div>
-							<div id="line3" class="computerLine hiddenCompLine"></div>
-							<div id="line4" class="computerLine hiddenCompLine"></div>
-							<div id="line5" class="computerLine hiddenCompLine"></div>
-							<div id="line6" class="computerLine hiddenCompLine"></div>
-							<div id="line7" class="computerLine hiddenCompLine"></div>
-							<div id="line8" class="computerLine hiddenCompLine"></div>
-							<div id="line9" class="computerLine hiddenCompLine"></div>
-						</div>
-						<div id="webcam"></div>
-					</div>
-				</div>
-			</div>
-		</div>
-		<div id="timelineStartDot"></div>
-		<div id="timelineStartLine"></div>
-	</section>
+        <!-- SKILLS SECTION -->
+        <section class="section skills light" id="skills">
+            <div class="illustration-bg" data-speed="20" data-parent-section="aboutme"></div>
+            <div class="title">
+                <p class="number">02</p>
+                <p class="subtitule">SKILLS</p>
+                <h2>With what work</h2>
+            </div>
 
+            <div class="content">
+                <p>I am <strong>specialized </strong> in <strong>backend development</strong>with Java, Spring Framework and in<strong>and machine learning</strong> with Numpy, Scipy, Tensorflow etc.
 
-		<section  id="education" class="education">
-			<div id="eduSummaryWrapper">
-				<div id="progLangs">
-					<div class="progLang">
-							<h2>Programming languages <span class="red">covered</span></h2>
-					</div>
-					<div class="progLang">
-						<p>Python</p>
-						<div class="timelineDotUpper"></div>
-					</div>
-					<div class="progLang">
-						<p>Java</p>
-						<div class="timelineDotUpper"></div>
-					</div>
-					<div class="progLang">
-						<p>C++</p>
-						<div class="timelineDotUpper"></div>
-					</div>
-					<div class="progLang">
-						<p>C</p>
-						<div class="timelineDotUpper"></div>
-					</div>
-					<div class="progLang">
-						<p>JavaScript</p>
-						<div class="timelineDotUpper"></div>
-					</div>
-					<div class="progLang">
-						<p>and others..</p>
-						<div class="timelineDotUpper"></div>
-					</div>
-				</div>
+                <div class="skills-icons">
+                    <div class="skill-container">
+                        <div class="skill">
+                            <img src="img/skills/color/java.svg" alt="Logotipo de HTML5 en color" class="color">
+                            <img src="img/skills/color/java.svg" alt="Logotipo de HTML5 en color blanco" class="white">
+                        </div>
+                    </div>
+                    <div class="skill-container">
+                        <div class="skill">
+                            <img src="img/skills/color/tf.svg" alt="Logotipo de CSS3 en color" class="color">
+                            <img src="img/skills/color/tf.svg" alt="Logotipo de CSS3 en color blanco" class="white">
+                        </div>
+                    </div>
+                    <div class="skill-container">
+                        <div class="skill">
+                            <img src="img/skills/color/spring.svg" alt="Logotipo de JavaScript en color" class="color">
+                            <img src="img/skills/color/spring.svg" alt="Logotipo de JavaScript en color blanco" class="white">
+                        </div>
+                    </div>
+                    <div class="skill-container">
+                        <div class="skill">
+                            <img src="img/skills/color/git.svg" alt="Logotipo de Git en color" class="color">
+                            <img src="img/skills/git.svg" alt="Logotipo de Git en color blanco" class="white">
+                        </div>
+                    </div>
+                    <div class="skill-container">
+                        <div class="skill">
+                            <img src="img/skills/color/python.svg" alt="Logotipo de SASS en color" class="color">
+                            <img src="img/skills/color/python.svg" alt="Logotipo de SASS en color blanco" class="white">
+                        </div>
+                    </div>
+                    <div class="skill-container">
+                        <div class="skill">
+                            <img src="img/skills/color/linux.svg" alt="Logotipo de WordPress en color" class="color">
+                            <img src="img/skills/color/linux.svg" alt="Logotipo de WordPress en color blanco" class="white">
+                        </div>
+                    </div>
+                    <div class="skill-container">
+                        <div class="skill">
+                            <img src="img/skills/color/mongo.png" alt="Logotipo de Adobe Photoshop en color" class="color">
+                            <img src="img/skills/color/mongo.png" alt="Logotipo de Adobe Photoshop en color blanco" class="white">
+                        </div>
+                    </div>
+                    <div class="skill-container">
+                        <div class="skill">
+                            <img src="img/skills/color/html5.svg" alt="Logotipo de Adobe Illustrator en color" class="color">
+                            <img src="img/skills/html5.svg" alt="Logotipo de Adobe Illustrator en color blanco" class="white">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
 
-				<div id="upperTimeline"></div>
-				<div class="eduSummary">
-					<div class="timelineStopLine"></div>
-					<div id="timelineDotHeader"></div>
-					<h1 >Education</h1>
-					<div class="thinBorder"></div>
-					<p>
-						I'm currently studying towards a Bachelor of Engineering degree in Computer Engineering at Kathmandu University.
-					</p>
-					<div class="timelineStopLine"></div>
-				</div>
+        <!--TIMELINE SECTION -->
+        <section class="section timeline light" id="timeline">
+            <div class="illustration-bg" data-speed="20" data-parent-section="skills"></div>
+            <div class="title">
+                <p class="number">03</p>
+                <p class="subtitule">TIMELINE</p>
+                <h2>Where I have been</h2>
+            </div>
 
-			</div>
-			<div id="eduPeriscopeWrapper">
-				<div id="eduLowerBackground"></div>
-				<div class="eduPeriscope">
-					<!-- <div class="schoolImg"></div> -->
-				</div>
-				<div class="timelineWrapper"><div class="contTimeline"></div></div>
-			</div>
-			<div id="eduTimelineWrapper">
+            <div class="content">
+                <div class="timeline-element">
+                    <div class="line"></div>
+                    <div class="elements">
+                        <section class="element">
+                            
+                            <div class="circle"></div>
+                            <div class="job-content">
+                                <h3 class="job-title">Software engineer Intern</h3>
+                                <p class="date">June 2018 - Now</p>
+                                <p class="company">Fusemachines Nepal</p>
+                                <p class="job-description">Develop a full-fledged web application using Spring Framework.Learned the basics of ML and able to do an Machine Learning and Deep Learning project end-to-end.</p>
+                            </div>
+                        </section>
 
-				<div class="timelineWrapper"><div class="contTimeline"></div></div>
-				<div class="smallerContainer">
-					<div class="eduTimeline">
-						<div id="edus">
-							<div class="edu">
-								<div class="leftOfTimeline">
-									<div class="university">
-										<h2>Kathmandu University</h2>
-										<h3>Dhulikhel, Nepal</h3>
-										<p>Computer Engineering</p>
-										<div class="showCourses"><p>Show Courses</p></div>
-									</div>
-								</div>
-								<div class="timelineDot"></div>
-								<div class="rightOfTimeline">
-									<p>2014-2018</p>
-								</div>
-								<div class="courseWrapper">
-									<div class="courses">
-										<div class="coursesUpper">
-											<p>Major Courses</p>
-										</div>
-										<div class="listWrapper">
-											<div class="courseListWrapper">
-												<ul class="courseList">
-													<li>Machine Learning</li>
-													<li>Artificial Intelligence</li>
-													<li>Database Management System</li>
-													<li>Computer Networking</li>
-                                                    <li>Compute Graphics</li>
-                                                    <li>Calculus and Algebra</li>
-                                                    <li>Algorithms and Complexity</li>
-                                                    <li>Operating Systems</li>
-                                                    <li>Speech and Language Processing</li>
-                                                    <li>Statistics and Probability</li>
-												</ul>
-											</div>
-										</div>
-									</div>
-								</div>
-							</div>
-							<div class="edu">
-								<div class="leftOfTimeline">
-									<div class="university">
-										<h2>Valmiki Shiksha Sadan </h2>
-										<h3>Chitwan, Nepal</h3>
-										<p>High School</p>
-										<div class="showCourses"><p>Show Courses</p></div>
-									</div>
-								</div>
-								<div class="timelineDot"></div>
-								<div class="rightOfTimeline">
-									<p>2012 - 2014</p>
-								</div>
-								<div class="courseWrapper">
-									<div class="courses">
-										<div class="coursesUpper">
-											<p>Major Courses</p>
-											<div class="courseLeft"><i class="fa fa-angle-left"></i></div>
-											<div class="courseRight"><i class="fa fa-angle-right"></i></div>
-										</div>
-										<div class="listWrapper">
-											<div class="courseListWrapper">
-												<ul class="courseList">
-													<li>Physics</li>
-													<li>Chemistry</li>
-													<li>Biology</li>
-													<li>Mathematics</li>
-												</ul>
-											</div>
-										</div>
-									</div>
-								</div>
-							</div>
-							<!--<div class="edu">-->
-								<!--<div class="leftOfTimeline">-->
-									<!--<div class="university">-->
-										<!--<h2>Linköping University</h2>-->
-										<!--<h3>Linköping, Sweden</h3>-->
-										<!--<p>Bachelor of Computer Science</p>-->
-										<!--<div class="showCourses"><p>Show Courses</p></div>-->
-									<!--</div>-->
-								<!--</div>-->
-								<!--<div class="timelineDot"></div>-->
-								<!--<div class="rightOfTimeline">-->
-									<!--<p>2013 - 2015</p>-->
-								<!--</div>-->
-								<!--<div class="courseWrapper">-->
-									<!--<div class="courses">-->
-										<!--<div class="coursesUpper">-->
-											<!--<p>Semester 1</p>-->
-											<!--<div class="courseLeft"><i class="fa fa-angle-left"></i></div>-->
-											<!--<div class="courseRight"><i class="fa fa-angle-right"></i></div>-->
-										<!--</div>-->
-										<!--<div class="listWrapper">-->
-											<!--<div class="courseListWrapper">-->
-												<!--<ul class="courseList">-->
-													<!--<li>Discrete Mathematics</li>-->
-													<!--<li>Computer Systems and Programming</li>-->
-													<!--<li>Perspectives to Computer Technology</li>-->
-													<!--<li>Professionalism for Engineers, part 1</li>-->
-													<!--<li>Imperative Programming in Python</li>-->
-													<!--<li>Introductory Course in Calculus</li>-->
-												<!--</ul>-->
-											<!--</div>-->
-											<!--<div class="courseListWrapper">-->
-												<!--<ul class="courseList">-->
-													<!--<li>Calculus in one variable, 1</li>-->
-													<!--<li>Object Oriented Programming and Java</li>-->
-													<!--<li>Professionalism for Engineers, part 2</li>-->
-													<!--<li>Electronics</li>-->
-													<!--<li>Calculus in one variable, 2</li>-->
-													<!--<li>Switching Theory and Logical Design</li>-->
-												<!--</ul>-->
-											<!--</div>-->
-											<!--<div class="courseListWrapper">-->
-												<!--<ul class="courseList">-->
-													<!--<li>Linear Algebra</li>-->
-													<!--<li>Professionalism for Engineers, part 3</li>-->
-													<!--<li>Data Structures, Algorithms and Paradigms</li>-->
-													<!--<li>Computer Hardware and Architecture</li>-->
-													<!--<li>Engineering Mechanics</li>-->
-												<!--</ul>-->
-											<!--</div>-->
-											<!--<div class="courseListWrapper">-->
-												<!--<ul class="courseList">-->
-													<!--<li>Multivariable Calculus</li>-->
-													<!--<li>Concurrent Programming and Operating Systems</li>-->
-													<!--<li>Professionalism for Engineers, part 4</li>-->
-													<!--<li>Computer Design</li>-->
-													<!--<li>Mathematical Statistics</li>-->
-													<!--<li>Physics</li>-->
-												<!--</ul>-->
-											<!--</div>-->
-											<!--<div class="courseListWrapper">-->
-												<!--<ul class="courseList">-->
-													<!--<li>Software Engineering Theory</li>-->
-													<!--<li>Logic</li>-->
-													<!--<li>Professionalism for Engineers, part 5</li>-->
-													<!--<li>Signals and Systems, and Transform Theory</li>-->
-													<!--<li>Microcomputer, Project Laboratory</li>-->
-													<!--<li>Combinatorial Optimization, Introductory Course</li>-->
-												<!--</ul>-->
-											<!--</div>-->
-											<!--<div class="courseListWrapper">-->
-												<!--<ul class="courseList">-->
-													<!--<li>Software Engineering - Bachelor Project</li>-->
-													<!--<li>Professionalism for Engineers, part 6</li>-->
-													<!--<li>Automatic Control Y</li>-->
-													<!--<li>Signals, Information and Communication</li>-->
-												<!--</ul>-->
-											<!--</div>-->
-										<!--</div>-->
-									<!--</div>-->
-								<!--</div>-->
-							<!--</div>-->
-							<!--<div class="edu">-->
-								<!--<div class="leftOfTimeline">-->
-									<!--<div class="university">-->
-										<!--<h2>ETH Zürich</h2>-->
-										<!--<h3>Zürich, Switzerland</h3>-->
-										<!--<p>Bachelor of Computer Science</p>-->
-										<!--<div class="showCourses"><p>Show Courses</p></div>-->
-									<!--</div>-->
-								<!--</div>-->
-								<!--<div class="timelineDot"></div>-->
-								<!--<div class="rightOfTimeline">-->
-									<!--<p>2015 - 2016</p>-->
-								<!--</div>-->
-								<!--<div class="courseWrapper">-->
-									<!--<div class="courses">-->
-										<!--<div class="coursesUpper">-->
-											<!--<p>Semester 1</p>-->
-										<!--</div>-->
-										<!--<div class="listWrapper">-->
-											<!--<div class="courseListWrapper">-->
-												<!--<ul class="courseList">-->
-													<!--<li>Machine Learning</li>-->
-													<!--<li>Mobile and Personal Information Systems</li>-->
-													<!--<li>Human Computer Interaction</li>-->
-													<!--<li>Signal and Information Processing</li>-->
-												<!--</ul>-->
-											<!--</div>-->
-										<!--</div>-->
-									<!--</div>-->
-								<!--</div>-->
-							<!--</div>	                            -->
-                            <!--<div class="leftOfTimeline">-->
-									<!--<div class="university">-->
-										<!--<h2>Linköping University</h2>-->
-										<!--<h3>Linköping, Sweden</h3>-->
-										<!--<p>Master of Science in Machine Learning and Artificial Intelligence</p>-->
-										<!--<div class="showCourses"><p>Show Courses</p></div>-->
-									<!--</div>-->
-								<!--</div>-->
-								<!--<div class="timelineDot"></div>-->
-								<!--<div class="rightOfTimeline">-->
-									<!--<p>2016 - 2018</p>-->
-								<!--</div>-->
-								<!--<div class="courseWrapper">-->
-									<!--<div class="courses">-->
-										<!--<div class="coursesUpper">-->
-											<!--<p>Semester 1</p>-->
-											<!--<div class="courseLeft"><i class="fa fa-angle-left"></i></div>-->
-											<!--<div class="courseRight"><i class="fa fa-angle-right"></i></div>-->
-										<!--</div>-->
-										<!--<div class="listWrapper">-->
-											<!--<div class="courseListWrapper">-->
-												<!--<ul class="courseList">-->
-													<!--<li>Machine Learning</li>-->
-													<!--<li>Artificial Intelligence</li>-->
-													<!--<li>Numerical Algorithms in Computer Science</li>-->
-													<!--<li>Software Entrepreurship</li>-->
-													<!--<li>History of Technology</li>-->
-												<!--</ul>-->
-											<!--</div>-->
-											<!--<div class="courseListWrapper">-->
-												<!--<ul class="courseList">-->
-													<!--<li>Neural Networks and Learning Systems</li>-->
-													<!--<li>Data Mining - Clustering and Association Analysis</li>-->
-													<!--<li>AI Robotics</li>-->
-													<!--<li>Attendance at Thesis Presentation</li>-->
-													<!--<li>Advanced Web Programming</li>-->
-													<!--<li>Bayesian Learning</li>-->
-												<!--</ul>-->
-											<!--</div>-->
-										<!--</div>-->
-									<!--</div>-->
-								<!--</div>-->
-							<!--</div>-->
-						</div>
-					</div>
-					<!-- div id="penAndArrow">
-						<div id="penHolder">
-							<div id="penTop">
-								<div id="tipBorderLeft"></div>
-								<div id="penTip"></div>
-								<div id="tipBorderRight"></div>
-								<div id="penTipBottom"></div>
-							</div>
-							<div id="penBase">
-								<div id="penLine1"></div>
-								<div id="penLine2"></div>
-								<div id="penLine3"></div>
-							</div>
-							<div id="penBottom"></div>
-						</div>
-						<div id="arrowHolder">
-							<div id="arrowLine"></div>
-							<div id="arrowHead"></div>
-						</div>
-					</div> -->
-				</div>
-			</div>
-		</section>
-		<section id="experience" class="experience">
-				<div class="expUpper">
-					<h1 >Experience</h1>
-					<div id="workWrapper">
-						<div class="flip3d bigButton">
-							<div class="workButton">
-								<a data-target="mediaM" data-color ="red">
-									<p>Fusemachines Nepal</p>
-								</a>
-							</div>
-							<div class="workButtonBack">
-								<a data-color ="red">
-									<p>Intern</p>
-									<em>2018 - Present</em>
-								</a>
-							</div>
-						</div>
-					</div>
-				</div>
-		</section>
-		<div id="popDownWrapper">
-				<div class="mediaM workplace">
-					<div class="workplaceHeader">
-						<div class="flip3d smallButton">
-							<div class="workButton">
-								<p>2018</p>
-							</div>
-							<div class="workButtonBack">
-								<p>From</p>
-							</div>
-						</div>
-						<div class="imgPosition">
-							<img src="images/fusemachines1.png" alt="">
-							<p class="position">Intern</p>
-						</div>
-						<div class="flip3d smallButton">
-							<div class="workButton">
-								<p>Present</p>
-							</div>
-							<div class="workButtonBack">
-								<p>To</p>
-							</div>
-						</div>
-					</div>
-					<p>I was one of four interns selected from Kathmandu University.<br> I got lessons about Java and Spring Framework and got to experience the process of developing APIs.</p>
-				</div>
-			</div>
+                        <!-- <section class="element">
+                            
+                            <div class="circle"></div>
+                            <div class="job-content">
+                                <h3 class="job-title">Desarrolladora Web Frontend</h3>
+                                <p class="date">MAYO 2018 - JULIO 2018</p>
+                                <p class="company">MAINFOR</p>
+                                <p class="job-description">Diseño y maquetación web de contenidos de formación mediante HTML, CSS y JavaScript, incluyendo las tecnologías SASS, jQuery y Git. Revisión de accesibilidad para cumplir los criterios de conformidad nivel AA. Diseño de pequeñas ilustraciones e iconos (Photoshop e Illustrator).</p>
+                            </div>
+                        </section>
 
-		<section class="projects" id="projects">
-			<div id="projectFilter"></div>
-			<div class="container">
-				<a class="slideDir" id="slideLeft" href="javascript:void(0)"><i class="fa fa-angle-left"></i></a>
-				<a class="slideDir" id="slideRight" href="javascript:void(0)"><i class="fa fa-angle-right"></i></a>
-				<div id="projWrapper">
-					<h1 id="projectHeader" >Some Personal Projects</h1>
-					<div class="slideDiv" id="div1">
-						<div class="info">
-							<a href="https://github.com/uttsap/L-places"  target="_blank"><p>Locate Places</p></a>
-							<em>Web development</em>
-							<p>It focuses on the geographical field. L-Places is a simple website which intends to somehow act as a virtual guide to lead user to various places that is of interest to the user.</p>
-							<div class="thickBorder"></div>
-							<em>Languages, libraries and tools used</em>
-							<ul>
-								<li>Express</li>
-								<li>HTML</li>
-								<li>GoogleMap API</li>
-								<li>MongoDB</li>
-								<li>NodeJS</li>
-								<li>CSS</li>
-								<li>Wikipedia API</li>
-							</ul>
-						</div>
-					</div>
-					<div class="slideDiv" id="div2">			
-						<div class="info">
-							<a href="https://github.com/CodeModule/library-management-system"  target="_blank"><p>Library Management System API</p></a>
-							<em>API Development</em>
-							<p>This was a one week project we had in Fusemachines Nepal. The idea was to come up with a API of Library Management System. The features provided were CRUD operations, Issue and Return Books etc. The API was built using Java and Speing Framework</p>
-							<div class="thickBorder"></div>
-							<em>Languages, libraries and tools used</em>
-							<ul>
-								<li>Java</li>
-								<li>Spring Framework</li>
-								<li>Gradle</li>
-							</ul>
-						</div>
-					</div>
-					<div class="slideDiv" id="div3">			
-						<div class="info">
-							<a href="https://github.com/uttsap/NLP_project"  target="_blank"><p>Chatbot</p></a>
-							<em>Speech and Language Processing Project</em>
-							<p>This was a project that I did with a classmate in a SLP class that we had.This chatbot is powered by deep learning and trained on data from Reddit built on TensorFlow v1.5.1 and Python v3.6.4 </p>
-							<div class="thickBorder"></div>
-							<em>Languages, libraries and tools used</em>
-							<ul>
-								<li>Python</li>
-								<li>Tensorflow</li>
-							</ul>
-						</div>
-					</div>
-					<div class="slideDiv" id="div4">
-						<div class="info">
-							<a href="https://github.com/uttsap/portfolio"  target="_blank"><p>This Website</p></a>
-							<em>Web Development</em>
-							<p>This site has been built with HTML, CSS and Javascript using Gulp as the build system. During the process of building it I have tried frameworks and plugins such as Bootstrap, Animate.css and Wow.js. <br> Working on this site was a great way to get into learning web development and a good way to hone my design skills. </p>
-							<div class="thickBorder"></div>
-							<em>Languages, libraries and tools used</em>
-							<ul>
-								<li>HTML</li>
-								<li>CSS</li>
-								<li>Javascript</li>
-							</ul>							
-						</div>
-					</div>
-					<div class="slideDiv" id="div5">			
-						<div class="info">
-							<a href="https://github.com/subashbasnyat/machinelearning"  target="_blank"><p>Breakout</p></a>
-							<em>Machine Learning</em>
-							<p>We implemented an A3C model, using LSTM's, and trained it on atari 2600 environment, Breakout-v0 provided in the Openai Gym. Adam optimizer was used for sharing weights.</p>
-							<div class="thickBorder"></div>
-							<em>Languages, libraries and tools used</em>
-							<ul>
-								<li>Python</li>
-								<li>A3C Algorithm</li>
-								<li>LSTM</li>
-							</ul>
-						</div>
-					</div>
-					<!--<div class="slideDiv" id="div6">			-->
-						<!--<div class="info">-->
-							<!--<a href="http://www.eriklindernoren.se/minigolf/"  target="_blank"><p>Miniature Golf Tournament 2016</p></a>-->
-							<!--<em>Web Development</em>-->
-							<!--<p>Me and three friends decided to have a miniature golf tournament spanning over a couple of weeks during the summer, since we all were going to spent those weeks together in Linköping. And since it's common sense that any  miniature golf tournament during the summer is going to need its very own website, I decided to build one. <br> The website enabled us to keep up with stats and upload images, videos and so on to.<br>You can check it out <a href="http://eriklindernoren.se/minigolf/">here</a>.</p>-->
-							<!--<div class="thickBorder"></div>-->
-							<!--<em>Languages, libraries and tools used</em>-->
-							<!--<ul>-->
-								<!--<li>HTML</li>-->
-								<!--<li>CSS</li>-->
-								<!--<li>Javascript</li>-->
-								<!--<li>PHP</li>-->
-								<!--<li>MySQL</li>-->
-								<!--<li>Chart.js</li>-->
-							<!--</ul>-->
-						<!--</div>-->
-					<!--</div>-->
-					<div id="projImages">
-						<a id="site1" href="javascript:void(0)" data-target="1" class="prototype"><img src="images/locate.PNG" alt=""></img></a>
-						<a id="ethcircle" href="javascript:void(0)" data-target="2" class="prototype"><img src="images/.png" alt=""></img></a>
-						<a id="sonus" href="javascript:void(0)" data-target="3" class="prototype"><img src="images/locate.PNG" alt=""></img></a>-->
-						<a id="site" href="javascript:void(0)" data-target="4" class="prototype"><img src="images/website.PNG" alt=""></img></a>
-						<a id="moodi" href="javascript:void(0)" data-target="5" class="prototype"><img src="images/breakout.png" alt=""></img></a>
-						<!--<a id="golf" href="javascript:void(0)" data-target="6" class="prototype"><img src="images/golf.jpeg" alt=""></img></a>-->
-					</div>
-				</div>
-				
-			</div>
-		</section>
+                        <section class="element">
+                            
+                            <div class="circle"></div>
+                            <div class="job-content">
+                                <h3 class="job-title">Redactora de contenidos de formación</h3>
+                                <p class="date">FEBRERO 2018 - ABRIL 2018</p>
+                                <p class="company">MAINFOR</p>
+                                <p class="job-description">Redacción del contenido (actividades, píldoras formativas, videotutoriales e infografías) para la asignatura 'Diseño Web', en el que traté áreas como uso de Photoshop, fundamentos del diseño, usabilidad web, accesibilidad web, y creación del layout de un sitio web.</p>
+                            </div>
+                        </section>
 
+                        <section class="element">
+                            
+                            <div class="circle"></div>
+                            <div class="job-content">
+                                <h3 class="job-title">Docente de Diseño Gráfico</h3>
+                                <p class="date">NOVIEMBRE 2017 - DICIEMBRE 2017</p>
+                                <p class="company">CENTROS DE ESTUDIO VALVERDE</p>
+                                <p class="job-description">Docente del curso "Diseño gráfico e ilustración digital" dirigido a empresas, en el que impartí aspectos como las herramientas de Photoshop e Illustrator, retoque de fotografías con Photoshop y teoría básica sobre diseño web y gestión de redes sociales corporativas.</p>
+                            </div>
+                        </section>
 
-		<footer id="contact">
-			<div id="contactWrapper">
-				<h1>Drop Me a Line <div id="contactHeaderLine"></div></h1>
-				<a id="mail" href="mailto:uttam@fusemachines.com">uttam@fusemachines.com</a>
-				<div id="socWrap">
-					<div id="socMediaHeader">
-						<div id="socBorderLeft"></div>
-						<h2>Social Media</h2>
-						<div id="socBorderRight"></div>
-					</div>
-					<a id="github" class="socMedia" target="_blank" href="https://github.com/uttsap">
-						<i class="fa fa-github fa-stack-1x fa-inverse"></i>
-					</a>
-					<a id="linkedin" class="socMedia" target="_blank" href="https://www.linkedin.com/in/uttam011">
-						<i class="fa fa-linkedin fa-stack-1x fa-inverse"></i>
-					</a>
-					<a id="twitter" class="socMedia" target="_blank" href="https://twitter.com/im_uttam011">
-						<i class="fa fa-twitter fa-stack-1x fa-inverse"></i>
-					</a>
-					<a id="facebook" class="socMedia"  target="_blank" href="https://www.facebook.com/uttam011">
-						<i class="fa fa-facebook fa-stack-1x fa-inverse"></i>
-					</a>
-				</div>					
-			</div>
-			<h2 id="copyright">© 2016 Erik Linder-Norén</h2>			
-		</footer>
+                        <section class="element">
+                            
+                            <div class="circle"></div>
+                            <div class="job-content">
+                                <h3 class="job-title">Desarrolladora Web</h3>
+                                <p class="date">DICIEMBRE 2016 - ABRIL 2017</p>
+                                <p class="company">2MAS2WEBSITES</p>
+                                <p class="job-description">Diseño y desarrollo web con HTML, CSS, JavaScript, y en ocasiones utilizando WordPress. Diseño gráfico (Photoshop e Illustrator), y gestión de redes sociales.</p>
+                            </div>
+                        </section> -->
+                    </div>
+                </div>
+            </div>
+        </section>
 
-		<a class="navbuttons" id="scrollUp" data-target="homescreen" href="#">
-		<div>
-			<i class="fa fa-angle-up" aria-hidden="true"></i>
-			<p>TOP</p>
-		</div>
-	</a>
+        <!--PORTFOLIO SECTION -->
+        <section class="section portfolio" id="portfolio">
+            <div class="illustration-bg" data-speed="20" data-parent-section="timeline"></div>
+            <div class="title">
+                <p class="number">04</p>
+                <p class="subtitule">PORTFOLIO</p>
+                <h2>Some Personal Projects</h2>
+            </div>
 
+            <div class="content">
+                <div class="portfolio-gallery">
+                    <div class="navigation">
+                        <ul>
+                            <li class="todo active" data-filter="all"><a href="javascript:;">ALL</a></li>
+                            <li class="web" data-filter=".category-web"><a href="javascript:;">Backend</a></li>
+                            <li class="diseno" data-filter=".category-design"><a href="javascript:;">ML</a></li>
+                            <hr class="hover" />
+                            <hr class="line-active"/>
+                        </ul>
+                    </div>
+                    <div class="elements">
+                        <a href="javascript:;" class="portfolio-item mix category-web" data-item="valmar">
+                            <img class="lazy" data-sizes="width: 100%; height: auto;" data-src="img/portfolio/locate.PNG" alt="Mockup de la Web de Valmar">
+                            <div class="label">
+                                <p class="title">Locate Places</p>
+                                <!--<div class="tags">
+                                    <img src="img/skills/color/wordpress.svg" alt="Icono de WordPress">
+                                    <img src="img/skills/color/css3.svg" alt="Icono de CSS3">
+                                    <img src="img/skills/color/html5.svg" alt="Icono de HTML5">
+                                </div>-->
+                                <!--<p class="cta">PULSA PARA VER MÁS INFORMACIÓN</p>-->
+                            </div>
+                        </a>
+                        <a href="javascript:;" class="portfolio-item mix category-design" data-item="valverde">
+                            <img class="lazy" data-sizes="width: 100%; height: auto;" data-src="img/portfolio/breakout.png" alt="Mockup del diseño de un cartel realizado a Centros de Estudio Valverde">
+                            <div class="label">
+                                <p class="title">Breakout</p>
+                            </div>
+                        </a>
+                        <a href="javascript:;" class="portfolio-item mix category-web" data-item="vicenteortiz">
+                            <img class="lazy" data-sizes="width: 100%; height: auto;" data-src="img/portfolio/doctor.jpg" alt="Mockup de una web corporativa diseñada y desarrollada con WordPress, realizado a Vicente Ortiz Abogados">
+                            <div class="label">
+                                <p class="title">Doctor Sathi</p>
+                            </div>
+                        </a>
+                        <a href="javascript:;" class="portfolio-item mix category-design" data-item="webappdesign">
+                            <img class="lazy" data-sizes="width: 100%; height: auto;" data-src="img/portfolio/reddit.png" alt="Mockup de un flyer publicitario diseñado para Web App Design">
+                            <div class="label">
+                                <p class="title">Reddit Chatbot</p>
+                            </div>
+                        </a>
+                        <a href="javascript:;" class="portfolio-item mix category-web" data-item="dungeon">
+                            <img class="lazy" data-sizes="width: 100%; height: auto;" data-src="img/portfolio/site.PNG" alt="Mockup de la interfaz de un videojuego para Android y Web">
+                            <div class="label">
+                                <p class="title">Portfolio Website</p>
+                            </div>
+                        </a>
+                        <a href="javascript:;" class="portfolio-item mix category-web" data-item="iwata">
+                            <img class="lazy" data-sizes="width: 100%; height: auto;" data-src="img/portfolio/chatcat.png" alt="Mockup de una web diseñada y desarrollada en homenaje a Iwata">
+                            <div class="label">
+                                <p class="title">ChatCat</p>
+                            </div>
+                        </a>
+                        <!-- <a href="javascript:;" class="portfolio-item mix category-design" data-item="antiguaweb">
+                            <img class="lazy" data-sizes="width: 100%; height: auto;" data-src="img/portfolio/laliga.png" alt="Mockup de mi antigua web">
+                            <div class="label">
+                                <p class="title">La Liga Prediction</p>
+                            </div>
+                        </a> -->
+                        <!-- <a href="javascript:;" class="portfolio-item mix category-design" data-item="servimatica">
+                            <img class="lazy" data-sizes="width: 100%; height: auto;" data-src="img/portfolio/flyer-servimatica-thumb.png" alt="Mockup de un flyer publicitario diseñado para Servimática Low Cost">
+                            <div class="label">
+                                <p class="title">Flyer Publicitario</p>
+                            </div>
+                        </a>
+                        <a href="javascript:;" class="portfolio-item mix category-web" data-item="designquotes">
+                            <img class="lazy" data-sizes="width: 100%; height: auto;" data-src="img/portfolio/design-quotes-thumb.png" alt="Mockup de una pequeña aplicación web llamada Design Quotes">
+                            <div class="label">
+                                <p class="title">Diseño y Desarrollo Web</p>
+                            </div>
+                        </a>
+                        <a href="javascript:;" class="portfolio-item mix category-web" data-item="simonsays">
+                            <img class="lazy" data-sizes="width: 100%; height: auto;" data-src="img/portfolio/simon-says-thumb.png" alt="Mockup de una recreación del juego Simon Says">
+                            <div class="label">
+                                <p class="title">Recreación del Juego Simon Says</p>
+                            </div>
+                        </a>
+                        <a href="javascript:;" class="portfolio-item mix category-design" data-item="yunemy-logo">
+                            <img class="lazy" data-sizes="width: 100%; height: auto;" data-src="img/portfolio/yunemy-thumb.png" alt="Mockup de un logotipo">
+                            <div class="label">
+                                <p class="title">Logotipo</p>
+                            </div>
+                        </a>
+                        <a href="javascript:;" class="portfolio-item mix category-web" data-item="vivacopier">
+                            <img class="lazy" data-sizes="width: 100%; height: auto;" data-src="img/portfolio/vivacopier-thumb.png" alt="Mockup del prototipo de sistema de gestión de incidencias realizado a VivaCopier">
+                            <div class="label">
+                                <p class="title">Prototipo de Sistema de Gestión de Incidencias</p>
+                            </div>
+                        </a> -->
+                        
+                    </div>
+                </div>
+            </div>
+        </section>
 
+        <!-- YUNEMY SECTION -->
+       <!--  <section class="section yunemy light" id="yunemy">
+            <div class="illustration-bg" data-speed="20" data-parent-section="portfolio"></div>
+            <div class="title">
+                <p class="number">05</p>
+                <p class="subtitule">YUNEMY</p>
+                <h2>Algo más sobre mí</h2>
+            </div>
 
-		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
-		<script src="http://code.jquery.com/jquery-migrate-1.2.1.js"></script>
-		<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.3/jquery.easing.min.js"></script>
-		<script src="js/all.js"></script>
+            <div class="content">
+                <p>Siempre he pensado que la mejor forma para <strong>crecer profesionalmente</strong> es <strong>conocer</strong> a compañeros de tu sector, <strong>enseñar</strong> lo que sabes hacer y <strong>aprender</strong> de otros. Por este motivo, en 2017 fundé <strong>Yunemy</strong>, una <strong>comunidad tecnológica</strong>, en <strong>Málaga</strong> (a más de 100km de donde vivía), cuyo principal objetivo sea este: disponer de un medio para que los <strong>desarrolladores</strong> podamos <strong>mejorar</strong> nuestras <strong>competencias profesionales</strong> y hacer <strong>sinergias</strong>.</p>
+                <p>Es un proyecto <strong>muy personal</strong>, al que le he dedicado mucho tiempo y esfuerzo, y, como <strong>resultado</strong>, hasta la fecha somos <strong>más de 500 miembros</strong> y hemos organizado <strong>6 encuentros y talleres</strong>, todos con muy buena acogida, y gracias a los cuales he conocido a grandes profesionales y mejores personas.</p>
 
-		<script>
-		(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-			(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-			m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-		})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+                <img src="img/logo-yunemy.svg" alt="Logotipo de Yunemy">
 
-		ga('create', 'UA-63052877-1', 'auto');
-		ga('send', 'pageview');
+                <a href="https://www.meetup.com/es-ES/yunemy/" class="button" target="_blank" rel="noreferrer">MIRA TODO LO QUE HEMOS HECHO</a>
+            </div>
+        </section> -->
 
-		</script>
+        <!--BLOG SECTION
+        <section class="section blog" id="blog">
+            <div class="illustration-bg" data-speed="20" data-parent-section="yunemy"></div>
+            <div class="title">
+                <p class="number">06</p>
+                <p class="subtitule">BLOG</p>
+                <h2>También escribo</h2>
+            </div>
 
-	</body>
-	</html>
+            <div class="content">
+                <p>Sí, <strong>me gusta escribir</strong>: contar experiencias, compartir algo que sé o he aprendido, etc. Es una buena forma de <strong>comunicarme</strong> con el resto del mundo y aportar mi granito de arena. Te invito a que <strong>leas</strong> cualquiera de mis <strong>artículos</strong> (o bien los de <strong>Medium</strong> o los del blog de <strong>Web App Design</strong>). ¡Si tienes alguna o sugerencia no dudes en hacérmela saber!</p>
+
+                <a href="https://medium.com/@yune.vk" class="button" target="_blank" rel="noreferrer">VISITA MI BLOG EN MEDIUM</a>
+
+                <a href="https://webappdesign.es/author/soniarcayuela/" class="button" target="_blank" rel="noreferrer">VISITA MI BLOG EN WEB APP DESIGN</a>
+            </div>
+        </section> -->
+
+        <!--CONTACT SECTION -->
+        <footer class="section contact light" id="contact">
+            <div class="illustration-bg" data-speed="20" data-parent-section="blog"></div>
+            <div class="title">
+                <p class="number">07</p>
+                <p class="subtitule">CONTACT</p>
+                <h2>We speak?</h2>
+            </div>
+
+            <div class="content">
+                <p>Do you want to see how I work? If you are looking for a frontend, a designer, or just want to know me more, contact me and I will be<strong> happy to talk with you .</strong>.</p>
+
+                <div class="social-icons">
+                    <a href="mailto:uttsapkota104@gmail.com" target="_blank" rel="noreferrer" class="icon-contact email"><img class="svg" src="img/rrss/email.svg" alt="Icono de email"></a>
+                    <a href="https://www.linkedin.com/in/uttam-sapkota-b61279119/" target="_blank" rel="noreferrer" class="icon-contact linkedin"><img class="svg" src="img/rrss/linkedin.svg" alt="Icono de LinkedIn"></a>
+                    <!-- <a href="https://codepen.io/yune/" target="_blank" rel="noreferrer" class="icon-contact codepen"><img class="svg" src="img/rrss/codepen.svg" alt="Icono de codepen"></a> -->
+                    <a href="https://github.com/uttsap" target="_blank" rel="noreferrer" class="icon-contact github"><img class="svg" src="img/rrss/github.svg" alt="Icono de GitHub"></a>
+                    <a href="https://twitter.com/im_uttam011" target="_blank" rel="noreferrer" class="icon-contact twitter"><img class="svg" src="img/rrss/twitter.svg" alt="Icono de Twitter"></a>
+                </div>
+
+                <p class="credits">Designed and developed with by Uttam Sapkota</p>
+            </div>
+        </footer>
+    </div>
+    <div class="portfolio-modal-container">
+        <div class="modal" id="valmar">
+            <div class="close-button">
+                <a href="javascript:;"><img class="svg" src="img/close.svg" alt="Icono de cerrar"></a>
+                
+            </div>
+            <div class="image-cover">
+                <!--<img src="img/portfolio/valmar.png" alt="Mockup Web Valmar">-->
+                <div class="csslider">
+                    <input type="radio" name="slides" id="slides_valmar_1" checked />
+                    <input type="radio" name="slides" id="slides_valmar_2" />
+                    <input type="radio" name="slides" id="slides_valmar_3" />
+                    <input type="radio" name="slides" id="slides_valmar_4" />
+                    <ul>
+                        <li><img class="portfolio-image lazy" data-src="img/portfolio/valmar.png" alt="Mockup de un sitio web diseñado y desarrollado con WordPress" data-sizes="max-width: 100%; max-height: calc(100vh - 22px); width: auto;"></li>
+                        <li><img class="portfolio-image lazy" data-src="img/portfolio/valmar-1.png" alt="Mockup de un sitio web diseñado y desarrollado con WordPress" data-sizes="max-width: 100%; max-height: calc(100vh - 22px); width: auto;"></li>
+                        <li><img class="portfolio-image lazy" data-src="img/portfolio/valmar-2.png" alt="Mockup de un sitio web diseñado y desarrollado con WordPress" data-sizes="max-width: 100%; max-height: calc(100vh - 22px); width: auto;"></li>
+                        <li><img class="portfolio-image lazy" data-src="img/portfolio/valmar-3.png" alt="Mockup de un sitio web diseñado y desarrollado con WordPress" data-sizes="max-width: 100%; max-height: calc(100vh - 22px); width: auto;"></li>
+                    </ul>
+                    <div class="arrows">
+                        <label for="slides_valmar_1"></label>
+                        <label for="slides_valmar_2"></label>
+                        <label for="slides_valmar_3"></label>
+                        <label for="slides_valmar_4"></label>
+                        <label for="slides_valmar_1" class="goto-first"></label>
+                        <label for="slides_valmar_4" class="goto-last"></label>
+                    </div>
+                    <div class="navigation">
+                        <div>
+                            <label for="slides_valmar_1"></label>
+                            <label for="slides_valmar_2"></label>
+                            <label for="slides_valmar_3"></label>
+                            <label for="slides_valmar_4"></label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="main-content">
+                <div class="block">
+                    <div class="title">
+                        <p class="client">VALMAR</p>
+                        <h3>Web Corporativa con WordPress</h3>
+                    </div>
+                    <div class="main-info">
+                        <div class="tags">
+                            <span>#desarrollo-web</span>
+                            <span>#diseño-web</span>
+                            <span>#wordpress</span>
+                            <span>#css</span>
+                        </div>
+                        <div class="description">
+                            <p>Desde <strong>Valmar</strong>, una empresa de <strong>alquiler de embarcaciones</strong> y <strong>escuela náutica</strong> de la costa de Granada, querían darse a conocer y promocionar su oferta formativa. Para ello, se diseñó y desarrolló una web corporativa a través de WordPress.</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <!--<div class="icons">
+                    <img src="img/skills/color/css3.svg" alt="Icono de CSS3">
+                    <img src="img/skills/color/html5.svg" alt="Icono de HTML5">
+                </div>-->
+            </div>
+        </div>
+
+        <div class="modal" id="valverde">
+            <div class="close-button">
+                <a href="javascript:;"><img class="svg" src="img/close.svg" alt="Icono de cerrar"></a>
+                
+            </div>
+            <div class="image-cover">
+                <div class="csslider">
+                    <input type="radio" name="slides" id="slides_valverde_1" checked />
+                    <input type="radio" name="slides" id="slides_valverde_2" />
+                    <input type="radio" name="slides" id="slides_valverde_3" />
+                    <input type="radio" name="slides" id="slides_valverde_4" />
+                    <input type="radio" name="slides" id="slides_valverde_5" />
+                    <ul>
+                        <li><img class="portfolio-image lazy" data-src="img/portfolio/flyer-valverde.png" alt="Mockup del diseño de un cartel publicitario" data-sizes="max-width: 100%; max-height: calc(100vh - 22px); width: auto;"></li>
+                        <li><img class="portfolio-image lazy" data-src="img/portfolio/flyer-valverde-1.png" alt="Mockup del diseño de un cartel publicitario" data-sizes="max-width: 100%; max-height: calc(100vh - 22px); width: auto;"></li>
+                        <li><img class="portfolio-image lazy" data-src="img/portfolio/flyer-valverde-2.png" alt="Mockup del diseño de un cartel publicitario" data-sizes="max-width: 100%; max-height: calc(100vh - 22px); width: auto;"></li>
+                        <li><img class="portfolio-image lazy" data-src="img/portfolio/flyer-valverde-3.png" alt="Mockup del diseño de un cartel publicitario" data-sizes="max-width: 100%; max-height: calc(100vh - 22px); width: auto;"></li>
+                        <li><img class="portfolio-image lazy" data-src="img/portfolio/flyer-valverde-4.png" alt="Mockup del diseño de un cartel publicitario" data-sizes="max-width: 100%; max-height: calc(100vh - 22px); width: auto;"></li>
+                    </ul>
+                    <div class="arrows">
+                        <label for="slides_valverde_1"></label>
+                        <label for="slides_valverde_2"></label>
+                        <label for="slides_valverde_3"></label>
+                        <label for="slides_valverde_4"></label>
+                        <label for="slides_valverde_5"></label>
+                        <label for="slides_valverde_1" class="goto-first"></label>
+                        <label for="slides_valverde_5" class="goto-last"></label>
+                    </div>
+                    <div class="navigation">
+                        <div>
+                            <label for="slides_valverde_1"></label>
+                            <label for="slides_valverde_2"></label>
+                            <label for="slides_valverde_3"></label>
+                            <label for="slides_valverde_4"></label>
+                            <label for="slides_valverde_5"></label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="main-content">
+                <div class="block">
+                    <div class="title">
+                        <p class="client">CENTROS DE ESTUDIO VALVERDE</p>
+                        <h3>Diseño de Carteles</h3>
+                    </div>
+                    <div class="main-info">
+                        <div class="tags">
+                            <span>#diseño-gráfico</span>
+                            <span>#photoshop</span>
+                        </div>
+                        <div class="description">
+                            <p>Desde <strong>Centros de Estudios Valverde</strong> querían promocionar diversos <strong>cursos</strong> (inglés, clases particulares, socorrismo, etc), mediante diseños que sirvieran como flyers, carteles e imágenes para publicaciones en redes sociales. Debido a su <strong>extensa oferta formativa</strong>, se realizaron varios diseños, cada uno acorde al tipo de formación y público objetivo.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="modal" id="vicenteortiz">
+            <div class="close-button">
+                <a href="javascript:;"><img class="svg" src="img/close.svg" alt="Icono de cerrar"></a>
+                
+            </div>
+            <div class="image-cover">
+                <div class="csslider">
+                    <input type="radio" name="slides" id="slides_vicenteortiz_1" checked />
+                    <input type="radio" name="slides" id="slides_vicenteortiz_2" />
+                    <input type="radio" name="slides" id="slides_vicenteortiz_3" />
+                    <input type="radio" name="slides" id="slides_vicenteortiz_4" />
+                    <input type="radio" name="slides" id="slides_vicenteortiz_5" />
+                    <ul>
+                        <li><img class="portfolio-image lazy" data-src="img/portfolio/vicente-ortiz.png" alt="Mockup de una web corporativa diseñada y desarrollada con WordPress" data-sizes="max-width: 100%; max-height: calc(100vh - 22px); width: auto;"></li>
+                        <li><img class="portfolio-image lazy" data-src="img/portfolio/vicente-ortiz-1.png" alt="Mockup de una web corporativa diseñada y desarrollada con WordPress" data-sizes="max-width: 100%; max-height: calc(100vh - 22px); width: auto;"></li>
+                        <li><img class="portfolio-image lazy" data-src="img/portfolio/vicente-ortiz-2.png" alt="Mockup de una web corporativa diseñada y desarrollada con WordPress" data-sizes="max-width: 100%; max-height: calc(100vh - 22px); width: auto;"></li>
+                        <li><img class="portfolio-image lazy" data-src="img/portfolio/vicente-ortiz-3.png" alt="Mockup de una web corporativa diseñada y desarrollada con WordPress" data-sizes="max-width: 100%; max-height: calc(100vh - 22px); width: auto;"></li>
+                        <li><img class="portfolio-image lazy" data-src="img/portfolio/vicente-ortiz-4.png" alt="Mockup de una web corporativa diseñada y desarrollada con WordPress" data-sizes="max-width: 100%; max-height: calc(100vh - 22px); width: auto;"></li>
+                    </ul>
+                    <div class="arrows">
+                        <label for="slides_vicenteortiz_1"></label>
+                        <label for="slides_vicenteortiz_2"></label>
+                        <label for="slides_vicenteortiz_3"></label>
+                        <label for="slides_vicenteortiz_4"></label>
+                        <label for="slides_vicenteortiz_5"></label>
+                        <label for="slides_vicenteortiz_1" class="goto-first"></label>
+                        <label for="slides_vicenteortiz_5" class="goto-last"></label>
+                    </div>
+                    <div class="navigation">
+                        <div>
+                            <label for="slides_vicenteortiz_1"></label>
+                            <label for="slides_vicenteortiz_2"></label>
+                            <label for="slides_vicenteortiz_3"></label>
+                            <label for="slides_vicenteortiz_4"></label>
+                            <label for="slides_vicenteortiz_5"></label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="main-content">
+                <div class="block">
+                    <div class="title">
+                        <p class="client">VICENTE ORTIZ ABOGADOS</p>
+                        <h3>Web Corporativa con WordPress</h3>
+                    </div>
+                    <div class="main-info">
+                        <div class="tags">
+                            <span>#desarrollo-web</span>
+                            <span>#diseño-web</span>
+                            <span>#wordpress</span>
+                            <span>#css</span>
+                            <span>#javascript</span>
+                        </div>
+                        <div class="description">
+                            <p>En <strong>Vicente Ortiz Abogados</strong> querían <strong>renovar su sitio web</strong>, y cambiarla por un diseño más actual y alejado del clásico concepto de despacho de abogados. Por eso, hicimos un diseño más <strong>moderno</strong>, respetando su imagen corporativa y asegurando su correcta visualización en <strong>dispositivos móviles</strong>. La <strong>libertad</strong> que tuvimos a la hora de plantear el diseño, y la <strong>buena disposición</strong> y <strong>comunicación</strong> con ellos hizo de este un <strong>gran proyecto</strong>.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="modal" id="webappdesign">
+            <div class="close-button">
+                <a href="javascript:;"><img class="svg" src="img/close.svg" alt="Icono de cerrar"></a>
+                
+            </div>
+            <div class="image-cover">
+                <div class="csslider">
+                    <input type="radio" name="slides" id="slides_webappdesign_1" checked />
+                    <input type="radio" name="slides" id="slides_webappdesign_2" />
+                    <ul>
+                        <li><img class="portfolio-image lazy" data-src="img/portfolio/flyer-web-app-design.png" alt="Mockup del disñeo de un flyer publicitario, en el que se anuncian cursos de WordPress" data-sizes="max-width: 100%; max-height: calc(100vh - 22px); width: auto;"></li>
+                        <li><img class="portfolio-image lazy" data-src="img/portfolio/flyer-web-app-design-2.png" alt="Mockup del disñeo de un flyer publicitario, en el que se anuncian cursos de WordPress" data-sizes="max-width: 100%; max-height: calc(100vh - 22px); width: auto;"></li>
+                    </ul>
+                    <div class="arrows">
+                        <label for="slides_webappdesign_1"></label>
+                        <label for="slides_webappdesign_2"></label>
+                        <label for="slides_webappdesign_1" class="goto-first"></label>
+                        <label for="slides_webappdesign_2" class="goto-last"></label>
+                    </div>
+                    <div class="navigation">
+                        <div>
+                            <label for="slides_webappdesign_1"></label>
+                            <label for="slides_webappdesign_2"></label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="main-content">
+                <div class="block">
+                    <div class="title">
+                        <p class="client">WEB APP DESIGN</p>
+                        <h3>Diseño de Flyer</h3>
+                    </div>
+                    <div class="main-info">
+                        <div class="tags">
+                            <span>#diseño-gráfico</span>
+                            <span>#illustrator</span>
+                        </div>
+                        <div class="description">
+                            <p>En <strong>Web App Design</strong>, queríamos promocionar unos <strong>cursos de iniciación a WordPress</strong>, por lo que diseñamos unos flyers llamativos con toda la información del curso.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="modal" id="dungeon">
+            <div class="close-button">
+                <a href="javascript:;"><img class="svg" src="img/close.svg" alt="Icono de cerrar"></a>
+                
+            </div>
+            <div class="image-cover">
+                <div class="csslider">
+                    <input type="radio" name="slides" id="slides_dungeon_1" checked />
+                    <input type="radio" name="slides" id="slides_dungeon_2" />
+                    <ul>
+                        <li><img class="portfolio-image lazy" data-src="img/portfolio/dungeon.png" alt="Mockup de un videojuego realizado para Android, con una versión web" data-sizes="max-width: 100%; max-height: calc(100vh - 22px); width: auto;"></li>
+                        <li><img class="portfolio-image lazy" data-src="img/portfolio/dungeon-1.png" alt="Mockup de un videojuego realizado para Android, con una versión web" data-sizes="max-width: 100%; max-height: calc(100vh - 22px); width: auto;"></li>
+                    </ul>
+                    <div class="arrows">
+                        <label for="slides_dungeon_1"></label>
+                        <label for="slides_dungeon_2"></label>
+                        <label for="slides_dungeon_1" class="goto-first"></label>
+                        <label for="slides_dungeon_2" class="goto-last"></label>
+                    </div>
+                    <div class="navigation">
+                        <div>
+                            <label for="slides_dungeon_1"></label>
+                            <label for="slides_dungeon_2"></label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="main-content">
+                <div class="block">
+                    <div class="title">
+                        <p class="client">DUNGEON</p>
+                        <h3>Videojuego para Android y Web</h3>
+                    </div>
+                    <div class="main-info">
+                        <div class="tags">
+                            <span>#android</span>
+                            <span>#java</span>
+                            <span>#desarrollo-web</span>
+                            <span>#html</span>
+                            <span>#css</span>
+                            <span>#javascript</span>
+                            <span>#php</span>
+                            <span>#mysql</span>
+                            <span>#photoshop</span>
+                        </div>
+                        <div class="description">
+                            <p>Fue mi <strong>proyecto de fin de curso</strong> para los ciclos Desarrollo de Aplicaciones Web y Desarrollo de Aplicaciones Multiplataforma: un juego del género <strong>rogelike</strong> (exploración de mazmorras) desarrollado para Android, con una versión web realizada en HTML, CSS y JavaScript. Un proyecto complejo con el que disfruté muchísimo y aprendí bastante sobre mecánicas de videojuegos.</p>
+    
+                            <a href="https://www.youtube.com/watch?v=ee4urI7VyFA" target="_blank" rel="noreferrer" class="link"><img src="img/youtube.svg" alt="Icono de YouTube" class="svg icon"> Mira el vídeo de la presentación</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="modal" id="servimatica">
+            <div class="close-button">
+                <a href="javascript:;"><img class="svg" src="img/close.svg" alt="Icono de cerrar"></a>
+                
+            </div>
+            <div class="image-cover">
+                <div class="csslider">
+                    <input type="radio" name="slides" id="slides_servimatica_1" checked />
+                    <input type="radio" name="slides" id="slides_servimatica_2" />
+                    <ul>
+                        <li><img class="portfolio-image lazy" data-src="img/portfolio/flyer-servimatica.png" alt="Mockup del diseño de un flyer publicitario" data-sizes="max-width: 100%; max-height: calc(100vh - 22px); width: auto;"></li>
+                        <li><img class="portfolio-image lazy" data-src="img/portfolio/flyer-servimatica-1.png" alt="Mockup del diseño de un flyer publicitario" data-sizes="max-width: 100%; max-height: calc(100vh - 22px); width: auto;"></li>
+                    </ul>
+                    <div class="arrows">
+                        <label for="slides_servimatica_1"></label>
+                        <label for="slides_servimatica_2"></label>
+                        <label for="slides_servimatica_1" class="goto-first"></label>
+                        <label for="slides_servimatica_2" class="goto-last"></label>
+                    </div>
+                    <div class="navigation">
+                        <div>
+                            <label for="slides_servimatica_1"></label>
+                            <label for="slides_servimatica_2"></label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="main-content">
+                <div class="block">
+                    <div class="title">
+                        <p class="client">SERVIMÁTICA LOW COST</p>
+                        <h3>Diseño de Flyer</h3>
+                    </div>
+                    <div class="main-info">
+                        <div class="tags">
+                            <span>#diseño-gráfico</span>
+                            <span>#illustrator</span>
+                        </div>
+                        <div class="description">
+                            <p>En <strong>Servimática Low Cost</strong> querían anunciar que habían abierto una nueva tienda, por lo que nos pidieron unos diseños de flyers para darse promoción y destacar sus servicios de reparación, soporte técnico, etc.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="modal" id="iwata">
+            <div class="close-button">
+                <a href="javascript:;"><img class="svg" src="img/close.svg" alt="Icono de cerrar"></a>
+                
+            </div>
+            <div class="image-cover">
+                <div class="csslider">
+                    <input type="radio" name="slides" id="slides_iwata_1" checked />
+                    <input type="radio" name="slides" id="slides_iwata_2" />
+                    <input type="radio" name="slides" id="slides_iwata_3" />
+                    <ul>
+                        <li><img class="portfolio-image lazy" data-src="img/portfolio/iwata.png" alt="Mockup de una web en homenaje a Iwata" data-sizes="max-width: 100%; max-height: calc(100vh - 22px); width: auto;"></li>
+                        <li><img class="portfolio-image lazy" data-src="img/portfolio/iwata-1.png" alt="Mockup de una web en homenaje a Iwata" data-sizes="max-width: 100%; max-height: calc(100vh - 22px); width: auto;"></li>
+                        <li><img class="portfolio-image lazy" data-src="img/portfolio/iwata-2.png" alt="Mockup de una web en homenaje a Iwata" data-sizes="max-width: 100%; max-height: calc(100vh - 22px); width: auto;"></li>
+                    </ul>
+                    <div class="arrows">
+                        <label for="slides_iwata_1"></label>
+                        <label for="slides_iwata_2"></label>
+                        <label for="slides_iwata_3"></label>
+                        <label for="slides_iwata_1" class="goto-first"></label>
+                        <label for="slides_iwata_3" class="goto-last"></label>
+                    </div>
+                    <div class="navigation">
+                        <div>
+                            <label for="slides_iwata_1"></label>
+                            <label for="slides_iwata_2"></label>
+                            <label for="slides_iwata_3"></label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="main-content">
+                <div class="block">
+                    <div class="title">
+                        <p class="client">TRIBUTO A IWATA</p>
+                        <h3>Diseño y Desarrollo Web</h3>
+                    </div>
+                    <div class="main-info">
+                        <div class="tags">
+                            <span>#desarrollo-web</span>
+                            <span>#diseño-web</span>
+                            <span>#html</span>
+                            <span>#css</span>
+                            <span>#javascript</span>
+                        </div>
+                        <div class="description">
+                            <p>Proyecto personal, realizado en 2016, para <strong>FreeCodeCamp</strong> (una plataforma de formación). Esta página web es un tributo a <strong>Satoru Iwata</strong>, antiguo presidente de <strong>Nintendo</strong>, que falleción en 2015.</p>
+    
+                            <a href="https://yunevk.github.io/iwata/index.html" target="_blank" rel="noreferrer" class="link"><img src="img/link.svg" alt="Icono de Enlace" class="svg icon"> Visita la web</a>
+                        </div>
+                    </div>
+                    
+                </div>
+                
+            </div>
+        </div>
+
+        <div class="modal" id="antiguaweb">
+            <div class="close-button">
+                <a href="javascript:;"><img class="svg" src="img/close.svg" alt="Icono de cerrar"></a>
+                
+            </div>
+            <div class="image-cover">
+                <div class="csslider">
+                    <input type="radio" name="slides" id="slides_oldweb_1" checked />
+                    <input type="radio" name="slides" id="slides_oldweb_2" />
+                    <input type="radio" name="slides" id="slides_oldweb_3" />
+                    <ul>
+                        <li><img class="portfolio-image lazy" data-src="img/portfolio/nueva-web.png" alt="Mockup de mi antigua web" data-sizes="max-width: 100%; max-height: calc(100vh - 22px); width: auto;"></li>
+                        <li><img class="portfolio-image lazy" data-src="img/portfolio/nueva-web-1.png" alt="Mockup de mi antigua web" data-sizes="max-width: 100%; max-height: calc(100vh - 22px); width: auto;"></li>
+                        <li><img class="portfolio-image lazy" data-src="img/portfolio/nueva-web-2.png" alt="Mockup de mi antigua web" data-sizes="max-width: 100%; max-height: calc(100vh - 22px); width: auto;"></li>
+                    </ul>
+                    <div class="arrows">
+                        <label for="slides_oldweb_1"></label>
+                        <label for="slides_oldweb_2"></label>
+                        <label for="slides_oldweb_3"></label>
+                        <label for="slides_oldweb_1" class="goto-first"></label>
+                        <label for="slides_oldweb_3" class="goto-last"></label>
+                    </div>
+                    <div class="navigation">
+                        <div>
+                            <label for="slides_oldweb_1"></label>
+                            <label for="slides_oldweb_2"></label>
+                            <label for="slides_oldweb_3"></label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="main-content">
+                <div class="block">
+                    <div class="title">
+                        <p class="client">MI ANTIGUA WEB</p>
+                        <h3>Diseño y Desarrollo Web</h3>
+                    </div>
+                    <div class="main-info">
+                        <div class="tags">
+                            <span>#desarrollo-web</span>
+                            <span>#diseño-web</span>
+                            <span>#html</span>
+                            <span>#css</span>
+                            <span>#javascript</span>
+                        </div>
+                        <div class="description">
+                            <p>En 2016, y gracias a la plataforma de formación <strong>FreeCodeCamp</strong>, me animé a hacer <strong>mi primera página web personal</strong>, que es la versión anterior a la que estás viendo ahora. Me sirvió para <strong>poner en práctica</strong> todo lo que había aprendido hasta la fecha sobre diseño y desarrollo web. Aunque ya han pasado uno años, sigo <strong>apreciando</strong> mucho este proyecto por todo lo que <strong>aprendí</strong> y por ser la primera vez que "salí al mundo" profesionalmente.</p>
+    
+                            <a href="old-web/index.html" target="_blank" rel="noreferrer" class="link"><img src="img/link.svg" alt="Icono de Enlace" class="svg icon"> Visita mi antigua web (¡Todavía está disponible!)</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="modal" id="designquotes">
+            <div class="close-button">
+                <a href="javascript:;"><img class="svg" src="img/close.svg" alt="Icono de cerrar"></a>
+                
+            </div>
+            <div class="image-cover">
+                <div class="csslider">
+                    <input type="radio" name="slides" id="slides_designquotes_1" checked />
+                    <input type="radio" name="slides" id="slides_designquotes_2" />
+                    <input type="radio" name="slides" id="slides_designquotes_3" />
+                    <input type="radio" name="slides" id="slides_designquotes_4" />
+                    <ul>
+                        <li><img class="portfolio-image lazy" data-src="img/portfolio/design-quotes.png" alt="Mockup de una pequeña aplicación web en la que se muestran citas célebres" data-sizes="max-width: 100%; max-height: calc(100vh - 22px); width: auto;"></li>
+                        <li><img class="portfolio-image lazy" data-src="img/portfolio/design-quotes-1.png" alt="Mockup de una pequeña aplicación web en la que se muestran citas célebres" data-sizes="max-width: 100%; max-height: calc(100vh - 22px); width: auto;"></li>
+                        <li><img class="portfolio-image lazy" data-src="img/portfolio/design-quotes-2.png" alt="Mockup de una pequeña aplicación web en la que se muestran citas célebres" data-sizes="max-width: 100%; max-height: calc(100vh - 22px); width: auto;"></li>
+                        <li><img class="portfolio-image lazy" data-src="img/portfolio/design-quotes-3.png" alt="Mockup de una pequeña aplicación web en la que se muestran citas célebres" data-sizes="max-width: 100%; max-height: calc(100vh - 22px); width: auto;"></li>
+                    </ul>
+                    <div class="arrows">
+                        <label for="slides_designquotes_1"></label>
+                        <label for="slides_designquotes_2"></label>
+                        <label for="slides_designquotes_3"></label>
+                        <label for="slides_designquotes_4"></label>
+                        <label for="slides_designquotes_1" class="goto-first"></label>
+                        <label for="slides_designquotes_4" class="goto-last"></label>
+                    </div>
+                    <div class="navigation">
+                        <div>
+                            <label for="slides_designquotes_1"></label>
+                            <label for="slides_designquotes_2"></label>
+                            <label for="slides_designquotes_3"></label>
+                            <label for="slides_designquotes_4"></label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="main-content">
+                <div class="block">
+                    <div class="title">
+                        <p class="client">DESIGN QUOTES</p>
+                        <h3>Diseño y Desarrollo Web</h3>
+                    </div>
+                    <div class="main-info">
+                        <div class="tags">
+                            <span>#desarrollo-web</span>
+                            <span>#diseño-web</span>
+                            <span>#html</span>
+                            <span>#css</span>
+                            <span>#javascript</span>
+                        </div>
+                        <div class="description">
+                            <p>Otro <strong>proyecto personal</strong> realizando a través de la plataforma de educación <strong>FreeCodeCamp</strong>, en 2016. Es un pequeño generador de citas relacionadas con el diseño, mediante la <strong>API Quotes On Design</strong>, y con opciones para generar nuevas frases y compartirlas por Twitter.</p>
+    
+                            <a href="https://yunevk.github.io/quotes/index.html" target="_blank" rel="noreferrer" class="link"><img src="img/link.svg" alt="Icono de Enlace" class="svg icon"> Visita la web</a>
+                        </div>
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+
+        <div class="modal" id="simonsays">
+            <div class="close-button">
+                <a href="javascript:;"><img class="svg" src="img/close.svg" alt="Icono de cerrar"></a>
+                
+            </div>
+            <div class="image-cover">
+                <div class="csslider">
+                    <input type="radio" name="slides" id="slides_simonsays_1" checked />
+                    <input type="radio" name="slides" id="slides_simonsays_2" />
+                    <ul>
+                        <li><img class="portfolio-image lazy" data-src="img/portfolio/simon-says.png" alt="Mockup de la recreación del videojuego Simon Says" data-sizes="max-width: 100%; max-height: calc(100vh - 22px); width: auto;"></li>
+                        <li><img class="portfolio-image lazy" data-src="img/portfolio/simon-says-1.png" alt="Mockup de la recreación del videojuego Simon Says" data-sizes="max-width: 100%; max-height: calc(100vh - 22px); width: auto;"></li>
+                    </ul>
+                    <div class="arrows">
+                        <label for="slides_simonsays_1"></label>
+                        <label for="slides_simonsays_2"></label>
+                        <label for="slides_simonsays_1" class="goto-first"></label>
+                        <label for="slides_simonsays_2" class="goto-last"></label>
+                    </div>
+                    <div class="navigation">
+                        <div>
+                            <label for="slides_simonsays_1"></label>
+                            <label for="slides_simonsays_2"></label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="main-content">
+                <div class="block">
+                    <div class="title">
+                        <p class="client">SIMON SAYS</p>
+                        <h3>Desarrollo de un Juego</h3>
+                    </div>
+                    <div class="main-info">
+                        <div class="tags">
+                            <span>#desarrollo-web</span>
+                            <span>#diseño-web</span>
+                            <span>#html</span>
+                            <span>#css</span>
+                            <span>#javascript</span>
+                        </div>
+                        <div class="description">
+                            <p>Esta es una recreación del clásico juego <strong>Simon Says</strong>, en el que tienes que repetir la secuencia de colores que reproduce la máquina en su turno. Lo realicé como trabajo para la asignatura <strong>Desarrollo Web en Entorno Cliente</strong>, cuando estudiaba el <strong>Ciclo Formativo de Desarrollo de Aplicaciones Web</strong>. Fue la primera vez que trabajé más a fondo con <strong>JavaScript</strong>, lo que me sirvió para darme cuenta que realmente sentía pasión por lo que hacía, y quería seguir este camino. Ha sido uno de los proyectos que más he disfrutado.</p>
+    
+                            <a href="https://yunevk.github.io/simon/index.html" target="_blank" rel="noreferrer" class="link"><img src="img/link.svg" alt="Icono de Enlace" class="svg icon"> Visita la web y juega un rato ;)</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="modal" id="yunemy-logo">
+            <div class="close-button">
+                <a href="javascript:;"><img class="svg" src="img/close.svg" alt="Icono de cerrar"></a>
+                
+            </div>
+            <div class="image-cover">
+                <div class="csslider">
+                    <input type="radio" name="slides" id="slides_yunemy_1" checked />
+                    <input type="radio" name="slides" id="slides_yunemy_2" />
+                    <input type="radio" name="slides" id="slides_yunemy_3" />
+                    <ul>
+                        <li><img class="portfolio-image lazy" data-src="img/portfolio/yunemy.png" alt="Mockup del diseño del logotipo de Yunemy" data-sizes="max-width: 100%; max-height: calc(100vh - 22px); width: auto;"></li>
+                        <li><img class="portfolio-image lazy" data-src="img/portfolio/yunemy-1.png" alt="Mockup del diseño del logotipo de Yunemy" data-sizes="max-width: 100%; max-height: calc(100vh - 22px); width: auto;"></li>
+                        <li><img class="portfolio-image lazy" data-src="img/portfolio/yunemy-2.png" alt="Mockup del diseño del logotipo de Yunemy" data-sizes="max-width: 100%; max-height: calc(100vh - 22px); width: auto;"></li>
+                    </ul>
+                    <div class="arrows">
+                        <label for="slides_yunemy_1"></label>
+                        <label for="slides_yunemy_2"></label>
+                        <label for="slides_yunemy_3"></label>
+                        <label for="slides_yunemy_1" class="goto-first"></label>
+                        <label for="slides_yunemy_3" class="goto-last"></label>
+                    </div>
+                    <div class="navigation">
+                        <div>
+                            <label for="slides_yunemy_1"></label>
+                            <label for="slides_yunemy_2"></label>
+                            <label for="slides_yunemy_3"></label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="main-content">
+                <div class="block">
+                    <div class="title">
+                        <p class="client">YUNEMY</p>
+                        <h3>Diseño de Logotipo</h3>
+                    </div>
+                    <div class="main-info">
+                        <div class="tags">
+                            <span>#diseño-gráfico</span>
+                            <span>#illustrator</span>
+                        </div>
+                        <div class="description">
+                            <p><strong>Logotipo</strong> diseñado para un proyecto personal, <strong>Yunemy</strong>. De todos los trabajos de diseño gráfico que he realizado, me atrevería a decir que este es al que le tengo más <strong>cariño</strong>, por la <strong>implicación personal</strong> que suponía y su significado, queriendo unificar conceptos como el mundo de la <strong>programación</strong> y la búsqueda de <strong>cumplir nuestros sueños</strong>.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="modal" id="vivacopier">
+            <div class="close-button">
+                <a href="javascript:;"><img class="svg" src="img/close.svg" alt="Icono de cerrar"></a>
+                
+            </div>
+            <div class="image-cover">
+                <div class="csslider">
+                    <input type="radio" name="slides" id="slides_vivacopier_1" checked />
+                    <input type="radio" name="slides" id="slides_vivacopier_2" />
+                    <input type="radio" name="slides" id="slides_vivacopier_3" />
+                    <ul>
+                        <!--<li><img class="portfolio-image lazy" src="img/portfolio/vivacopier.png" alt="Mockup del prototipo de sistema de gestión de incidencias realizado para VivaCopier"></li>
+                        <li><img class="portfolio-image lazy" src="img/portfolio/vivacopier-1.png" alt="Mockup del prototipo de sistema de gestión de incidencias realizado para VivaCopier"></li>
+                        <li><img class="portfolio-image lazy" src="img/portfolio/vivacopier-2.png" alt="Mockup del prototipo de sistema de gestión de incidencias realizado para VivaCopier"></li>-->
+                        <li><img class="portfolio-image lazy" data-src="img/portfolio/vivacopier.png" alt="Mockup del prototipo de sistema de gestión de incidencias realizado para VivaCopier" data-sizes="max-width: 100%; max-height: calc(100vh - 22px); width: auto;"></li>
+                        <li><img class="portfolio-image lazy" data-src="img/portfolio/vivacopier-1.png" alt="Mockup del prototipo de sistema de gestión de incidencias realizado para VivaCopier"></li>
+                        <li><img class="portfolio-image lazy" data-src="img/portfolio/vivacopier-2.png" alt="Mockup del prototipo de sistema de gestión de incidencias realizado para VivaCopier"></li>
+                    </ul>
+                    <div class="arrows">
+                        <label for="slides_vivacopier_1"></label>
+                        <label for="slides_vivacopier_2"></label>
+                        <label for="slides_vivacopier_3"></label>
+                        <label for="slides_vivacopier_1" class="goto-first"></label>
+                        <label for="slides_vivacopier_3" class="goto-last"></label>
+                    </div>
+                    <div class="navigation">
+                        <div>
+                            <label for="slides_vivacopier_1"></label>
+                            <label for="slides_vivacopier_2"></label>
+                            <label for="slides_vivacopier_3"></label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="main-content">
+                <div class="block">
+                    <div class="title">
+                        <p class="client">VIVACOPIER</p>
+                        <h3>Prototipo de Sistema de Gestión de Incidencias</h3>
+                    </div>
+                    <div class="main-info">
+                        <div class="tags">
+                            <span>#desarrollo-web</span>
+                            <span>#diseño-web</span>
+                            <span>#html</span>
+                            <span>#css</span>
+                            <span>#javascript</span>
+                        </div>
+                        <div class="description">
+                            <p>Uno de mis <strong>primeros proyectos</strong> cuando comencé a trabajar en una empresa, estando de prácticas. Es un <strong>prototipo</strong> para un <strong>sistema de gestión</strong> realizado a <strong>VivaCopier</strong>, una empresa de alquiler de impresoras. A través de este sistema de gestión, se pretendía dar <strong>soporte</strong> a los <strong>clientes</strong> que disponían de una impresora asociada, permitiéndoles enviar incidencias y solicitar consumibles fácilmente.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <noscript>
+        <link rel="stylesheet" href="css/vendor/animate.min.css">
+        <link rel="stylesheet" href="css/vendor/slider.min.css">
+    </noscript>
+    
+    <link rel="stylesheet" href="css/style.min.css">
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/vanilla-lazyload/10.15.0/lazyload.min.js"></script>
+
+    <script>
+        window.onload = function() {
+            var myLazyLoad = new LazyLoad({
+                elements_selector: ".lazy"
+            });
+        };
+    </script>
+    
+    
+    <script src="js/vendor/scrollreveal.min.js"></script>
+    <script src="js/script.min.js"></script>
+    <script src="js/vendor/particles.min.js"></script>
+    <script src="js/vendor/mixitup.min.js"></script>
+</body>
+</html>
+<!-- Google Analytics -->
+<script>
+    (function(i, s, o, g, r, a, m) {
+        i['GoogleAnalyticsObject'] = r;
+        i[r] = i[r] || function() {
+            (i[r].q = i[r].q || []).push(arguments)
+        }, i[r].l = 1 * new Date();
+        a = s.createElement(o),
+            m = s.getElementsByTagName(o)[0];
+        a.async = 1;
+        a.src = g;
+        m.parentNode.insertBefore(a, m)
+    })(window, document, 'script', 'https://www.google-analytics.com/analytics.js', 'ga');
+    ga('create', 'UA-84207543-1', 'auto');
+    ga('send', 'pageview');
+</script>
+<!-- End Google Analytics -->
+
+<!-- CSS Lazy Load -->
+<script type="text/javascript">
+    /* First CSS File */
+    var giftofspeed = document.createElement('link');
+    giftofspeed.rel = 'stylesheet';
+    giftofspeed.href = 'css/vendor/animate.min.css';
+    giftofspeed.type = 'text/css';
+    var godefer = document.getElementsByTagName('link')[0];
+    godefer.parentNode.insertBefore(giftofspeed, godefer);
+    
+    /* Second CSS File */
+    var giftofspeed2 = document.createElement('link');
+    giftofspeed2.rel = 'stylesheet';
+    giftofspeed2.href = 'css/vendor/slider.min.css';
+    giftofspeed2.type = 'text/css';
+    var godefer2 = document.getElementsByTagName('link')[0];
+    godefer2.parentNode.insertBefore(giftofspeed2, godefer2);
+    </script>
